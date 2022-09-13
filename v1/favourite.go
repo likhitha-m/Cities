@@ -7,7 +7,7 @@ import (
 
 func FavouritesGroup(e *echo.Group) {
 
-	e.POST("/:cityId", controllers.AddFavouriteCity)
+	e.POST("/:cityId", controllers.AddFavouriteCity, )
 	e.DELETE("/:cityId", controllers.RemoveFavouriteCity)
 
 }

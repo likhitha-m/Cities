@@ -39,3 +39,6 @@
 {"level":"error","msg":"func_CreatePassRefund: Error in binding. Error: code=415, message=Unsupported Media Type","time":"13-09-2022 12:08:41"}
 {"level":"error","msg":"func_CreatePassRefund: Error in binding. Error: code=415, message=Unsupported Media Type","time":"13-09-2022 12:10:16"}
 {"level":"error","msg":"func_CreatePassRefund: Error in binding. Error: code=415, message=Unsupported Media Type","time":"13-09-2022 12:13:57"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"13-09-2022 17:18:12"}
+{"level":"error","msg":"func_CreateCustomer: Error :Invalid mobile number","time":"13-09-2022 17:23:42"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"13-09-2022 17:23:54"}

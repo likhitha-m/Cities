@@ -15,4 +15,6 @@ func InitializeRoutes(e *echo.Group) {
 
 	gFavourites := e.Group("/favourites")
 	FavouritesGroup(gFavourites)
+	gUsers := e.Group("/users")
+	UsersGroup(gUsers)
 }

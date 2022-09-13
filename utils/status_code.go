@@ -18,6 +18,8 @@ func GetStatusCode(err error) int {
 		statusCode = http.StatusNotFound
 	} else if errors.Is(err, config.ErrWrongPayload) {
 		statusCode = http.StatusBadRequest
+	} else if errors.Is(err, config.ErrDuplicateCustomer) {
+		statusCode = http.StatusConflict
 	}
 	return statusCode
 }

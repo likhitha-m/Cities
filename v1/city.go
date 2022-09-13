@@ -7,7 +7,7 @@ import (
 
 func CitiesGroup(e *echo.Group) {
 
-	e.POST("", controllers.CreateCity)
+	e.POST("", controllers.CreateCity,)
 	e.GET("", controllers.GetCities)
 	e.GET("/:cityId", controllers.GetCityById)
 	e.DELETE("/:cityId", controllers.DeleteCityById)

@@ -8,6 +8,7 @@ const (
 	MsgCityUpdated = "City has been updated"
 	MsgFavAdded    = "City has been added to favourites"
 	MsgFavRemoved  = "City has been removed from favourites"
+	MsgUserAdded   = "User has been added"
 )
 
 var (
@@ -23,4 +24,7 @@ var (
 	ErrHttpCallNotFound            = errors.New("Call not found")
 	ErrHttpCallInternalServerError = errors.New("Internal server error")
 	ErrWentWrong                   = errors.New("Something went wrong")
+	ErrInvalidMobNum               = errors.New("Invalid mobile number")
+	ErrInvalidPasswordFormat       = errors.New("Invalid password format")
+	ErrDuplicateCustomer           = errors.New("User already exists with this email address")
 )

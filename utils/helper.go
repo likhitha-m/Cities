@@ -3,10 +3,12 @@ package utils
 import (
 	"encoding/base64"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"log"
 	"math"
 	"os"
+	"regexp"
 	"strconv"
 	"strings"
 	"time"
@@ -15,8 +17,10 @@ import (
 	logger "github.com/sirupsen/logrus"
 )
 
-
-
+func CheckForNumbers(str string) bool {
+	numCheck := regexp.MustCompile(`^[0-9]+$`)
+	return numCheck.MatchString(str)
+}
 
 func GenerateContNumber(n int, length int) (string, error) {
 	s := strconv.Itoa(n)
@@ -92,11 +96,6 @@ func CapFirstChar(s string) string {
 func ToLowerCase(str string) string {
 	return strings.ToLower(str)
 }
-
-
-
-
-
 
 func GetUTCDateTime(t time.Time) (time.Time, error) {
 	loc, err := time.LoadLocation("UTC")
@@ -190,7 +189,6 @@ func GetDuration(m string) (time.Duration, error) {
 	return t, nil
 }
 
-
 func encodeBase64cr(b []byte) string {
 	return base64.StdEncoding.EncodeToString(b)
 }
@@ -220,6 +218,80 @@ func SliceContains(s []string, e string) bool {
 		}
 	}
 	return false
+}
+
+func IsPasswordValid(password string) (bool, error) {
+	var (
+		uppercasePresent   bool
+		lowercasePresent   bool
+		numberPresent      bool
+		specialCharPresent bool
+		passLen            int
+		errorString        string
+	)
+	minPassLength, err := StringToNumber(os.Getenv("MIN_LOGIN_PASSWORD_LENGTH"))
+	if err != nil {
+		logger.Error("IsPasswordValid: Parse password length. Error: ", err)
+		return false, err
+	}
+	maxPassLength, err := StringToNumber(os.Getenv("MAX_LOGIN_PASSWORD_LENGTH"))
+	if err != nil {
+		logger.Error("IsPasswordValid: Parse password length. Error: ", err)
+		return false, err
+	}
+
+	for _, ch := range password {
+		switch {
+		case unicode.IsNumber(ch):
+			numberPresent = true
+			passLen++
+		case unicode.IsUpper(ch):
+			uppercasePresent = true
+			passLen++
+		case unicode.IsLower(ch):
+			lowercasePresent = true
+			passLen++
+		case unicode.IsPunct(ch) || unicode.IsSymbol(ch):
+			specialCharPresent = true
+			passLen++
+		case ch == ' ':
+			passLen++
+		}
+	}
+	appendError := func(err string) {
+		if len(strings.TrimSpace(errorString)) != 0 {
+			errorString += ", " + err
+		} else {
+			errorString = err
+		}
+	}
+	if !lowercasePresent {
+		appendError("lowercase letter missing")
+		logger.Error("lowercase letter missing")
+	}
+	if !uppercasePresent {
+		appendError("uppercase letter missing")
+		logger.Error("uppercase letter missing")
+	}
+	if !numberPresent {
+		appendError("atleast one numeric character required")
+	}
+	if !specialCharPresent {
+		appendError("special character missing")
+	}
+	if !(int(minPassLength) <= passLen && passLen <= int(maxPassLength)) {
+		appendError(fmt.Sprintf("password length must be between %d to %d characters long", minPassLength, maxPassLength))
+	}
+
+	if len(errorString) != 0 {
+		return false, errors.New(errorString)
+	}
+	return true, nil
+}
+func StringToNumber(key string) (int, error) {
+	nkey, _ := strconv.Atoi(key)
+	return nkey, nil
+
 }
 
 // func ESTstringUTCTime(value string) (*time.Time, error) {
