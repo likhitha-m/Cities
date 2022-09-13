@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"sample-golang/config"
+	"cities/config"
 	"crypto/aes"
 	"crypto/cipher"
 	"crypto/md5"

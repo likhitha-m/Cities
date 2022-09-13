@@ -5,10 +5,10 @@ import (
 	"log"
 	"os"
 
-	"sample-golang/config"
-	"sample-golang/controllers"
-	"sample-golang/storage"
-	route "sample-golang/v1"
+	"cities/config"
+	"cities/controllers"
+	"cities/storage"
+	route "cities/v1"
 
 	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
@@ -21,7 +21,7 @@ func main() {
 	fmt.Println("inside main function")
 	err := godotenv.Load()
 	if err != nil {
-		err := godotenv.Load("/var/api/sample-golang/.env")
+		err := godotenv.Load("/var/api/cities/.env")
 		if err != nil {
 			log.Fatalf("Error getting env, not comming through %v", err)
 		}

@@ -1,8 +1,8 @@
 package route
 
 import (
-	"sample-golang/controllers"
-	// "sample-golang/middleware"
+	"cities/controllers"
+	// "cities/middleware"
 
 	"github.com/labstack/echo/v4"
 )

@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"time"
 
-	"sample-golang/models"
-	"sample-golang/types"
+	"cities/models"
+	"cities/types"
 
-	"sample-golang/storage"
+	"cities/storage"
 
 	logger "github.com/sirupsen/logrus"
 	"go.mongodb.org/mongo-driver/bson"

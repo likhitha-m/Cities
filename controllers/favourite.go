@@ -1,13 +1,13 @@
 package controllers
 
 import (
-	"fmt"
+	// "fmt"
 	"net/http"
 
-	"sample-golang/config"
-	"sample-golang/services"
-	"sample-golang/types"
-	"sample-golang/utils"
+	"cities/config"
+	"cities/services"
+	// "cities/types"
+	"cities/utils"
 
 	"github.com/labstack/echo/v4"
 	logger "github.com/sirupsen/logrus"
@@ -18,12 +18,12 @@ import (
 func AddFavouriteCity(c echo.Context) error {
 	cId := c.Param("cityId")
 	cr := services.FavouritesReceiver{}
-	err := cr.AddFavouriteCity()
+	err := cr.AddFavouriteCity(cId)
 	if err != nil {
 		logger.Error("func_AddCreditsForGuestRecovery:  ", err.Error())
 		return utils.HttpErrorResponse(c, http.StatusBadRequest, config.ErrRecordNotFound)
 	}
-	return utils.HttpSuccessResponse(c, http.StatusOK, city)
+	return utils.HttpSuccessResponse(c, http.StatusOK, nil)
 }
 
 func RemoveFavouriteCity(c echo.Context) error {

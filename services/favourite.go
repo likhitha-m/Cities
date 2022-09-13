@@ -2,13 +2,13 @@ package services
 
 import (
 	"context"
-	"fmt"
-	"time"
+	// "fmt"
+	// "time"
 
-	"sample-golang/models"
-	"sample-golang/types"
+	"cities/models"
+	"cities/types"
 
-	"sample-golang/storage"
+	"cities/storage"
 
 	logger "github.com/sirupsen/logrus"
 	"go.mongodb.org/mongo-driver/bson"
@@ -24,9 +24,9 @@ type FavouritesReceiver struct {
 }
 
 func (cr *FavouritesReceiver) AddFavouriteCity(cityID string) error {
-	var city models.CityModel
+	// var city models.CityModel
 	mdb := storage.MONGO_DB
-	cId, err := primitive.ObjectIDFromHex(cityId)
+	cId, err := primitive.ObjectIDFromHex(cityID)
 	if err != nil {
 		logger.Error("func_GetGrantByOrder", err)
 
@@ -35,12 +35,12 @@ func (cr *FavouritesReceiver) AddFavouriteCity(cityID string) error {
 		"_id": cId,
 	}
 	favourite := mdb.Collection(models.CitiesCollection).FindOne(context.TODO(), filter)
-	result := mdb.Collection(models.FavouritesCollection).InsertOne(context.TODO(), favourite)
-	err = result.Decode(&city)
-	if err != nil {
-		logger.Error("func_S_GetGrant: Error in ", err)
-		return city, err
-	}
+	_, err = mdb.Collection(models.FavouritesCollection).InsertOne(context.TODO(), favourite)
+	// err = result.Decode(&city)
+	// if err != nil {
+	// 	logger.Error("func_S_GetGrant: Error in ", err)
+	// 	return city, err
+	// }
 	return nil
 }
 

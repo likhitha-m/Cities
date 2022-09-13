@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"net/http"
-	"sample-golang/utils"
+	"cities/utils"
 	"github.com/labstack/echo/v4"
+	"net/http"
 )
 
 /*
@@ -20,8 +20,3 @@ func HealthCheck(c echo.Context) error {
 		"data": "Server is up and running..",
 	})
 }
-
-
-
-
-

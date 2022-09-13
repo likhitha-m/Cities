@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"net/http"
 
-	"sample-golang/config"
-	"sample-golang/services"
-	"sample-golang/types"
-	"sample-golang/utils"
+	"cities/config"
+	"cities/services"
+	"cities/types"
+	"cities/utils"
 
 	"github.com/labstack/echo/v4"
 	logger "github.com/sirupsen/logrus"

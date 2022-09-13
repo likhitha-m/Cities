@@ -1,8 +1,8 @@
 package route
 
 import (
+	"cities/controllers"
 	"github.com/labstack/echo/v4"
-	"sample-golang/controllers"
 )
 
 func FavouritesGroup(e *echo.Group) {

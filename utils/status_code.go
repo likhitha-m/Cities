@@ -4,7 +4,7 @@ import (
 	"errors"
 	"net/http"
 
-	"sample-golang/config"
+	"cities/config"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
@@ -16,8 +16,8 @@ func GetStatusCode(err error) int {
 		statusCode = http.StatusBadRequest
 	} else if errors.Is(err, mongo.ErrNoDocuments) {
 		statusCode = http.StatusNotFound
-	}  else if errors.Is(err, config.ErrWrongPayload) {
+	} else if errors.Is(err, config.ErrWrongPayload) {
 		statusCode = http.StatusBadRequest
-	} 
+	}
 	return statusCode
 }

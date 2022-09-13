@@ -7,7 +7,7 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"sample-golang/config"
+	"cities/config"
 	logger "github.com/sirupsen/logrus"
 )
 

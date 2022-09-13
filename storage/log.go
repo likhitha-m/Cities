@@ -4,7 +4,7 @@ import (
 	"io"
 	"os"
 
-	"sample-golang/config"
+	"cities/config"
 	log "github.com/sirupsen/logrus"
 )
 
