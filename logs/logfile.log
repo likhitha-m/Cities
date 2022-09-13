@@ -1,0 +1,41 @@
+{"level":"error","msg":"func_S_GetCarts: Error in EOF","time":"12-09-2022 14:47:59"}
+{"level":"error","msg":"func_AddCreditsForGuestRecovery:  EOF","time":"12-09-2022 14:47:59"}
+{"level":"error","msg":"func_S_GetCarts: Error in EOF","time":"12-09-2022 14:49:44"}
+{"level":"error","msg":"func_AddCreditsForGuestRecovery:  EOF","time":"12-09-2022 14:49:44"}
+{"level":"error","msg":"func_S_GetCarts: Error in EOF","time":"12-09-2022 14:50:56"}
+{"level":"error","msg":"func_AddCreditsForGuestRecovery:  EOF","time":"12-09-2022 14:50:56"}
+{"level":"error","msg":"func_GetCheckout: Error in customer id parse-int, Error: strconv.ParseInt: parsing \"631aca83711befd7ac2372ee\": invalid syntax","time":"12-09-2022 15:21:27"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"12-09-2022 15:22:05"}
+{"level":"error","msg":"func_AddCreditsForGuestRecovery:  mongo: no documents in result","time":"12-09-2022 15:22:05"}
+{"level":"error","msg":"func_CreatePassRefund: Error in binding. Error: code=400, message=Unmarshal type error: expected=string, got=number, field=city, offset=14, internal=json: cannot unmarshal number into Go struct field CityPayload.city of type string","time":"12-09-2022 15:45:15"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"12-09-2022 16:01:28"}
+{"level":"error","msg":"func_AddCreditsForGuestRecovery:  mongo: no documents in result","time":"12-09-2022 16:01:28"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"12-09-2022 16:03:37"}
+{"level":"error","msg":"func_AddCreditsForGuestRecovery:  mongo: no documents in result","time":"12-09-2022 16:03:37"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"12-09-2022 16:04:05"}
+{"level":"error","msg":"func_AddCreditsForGuestRecovery:  mongo: no documents in result","time":"12-09-2022 16:04:05"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"12-09-2022 16:07:17"}
+{"level":"error","msg":"func_AddCreditsForGuestRecovery:  mongo: no documents in result","time":"12-09-2022 16:07:17"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"12-09-2022 16:09:40"}
+{"level":"error","msg":"func_AddCreditsForGuestRecovery:  mongo: no documents in result","time":"12-09-2022 16:09:40"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"12-09-2022 16:10:11"}
+{"level":"error","msg":"func_AddCreditsForGuestRecovery:  mongo: no documents in result","time":"12-09-2022 16:10:11"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"12-09-2022 16:11:13"}
+{"level":"error","msg":"func_AddCreditsForGuestRecovery:  mongo: no documents in result","time":"12-09-2022 16:11:13"}
+{"level":"error","msg":"func_CreatePassRefund: Error in binding. Error: code=400, message=Unmarshal type error: expected=string, got=number, field=city, offset=21, internal=json: cannot unmarshal number into Go struct field CityPayload.city of type string","time":"12-09-2022 16:14:15"}
+{"level":"error","msg":"func_CreatePassRefund: Error in binding. Error: code=400, message=Unmarshal type error: expected=string, got=number, field=city, offset=21, internal=json: cannot unmarshal number into Go struct field CityPayload.city of type string","time":"12-09-2022 16:21:21"}
+{"level":"error","msg":"func_CreatePassRefund: Error in binding. Error: code=415, message=Unsupported Media Type","time":"13-09-2022 10:30:43"}
+{"level":"error","msg":"func_CreatePassRefund: Error in binding. Error: code=415, message=Unsupported Media Type","time":"13-09-2022 10:31:54"}
+{"level":"error","msg":"func_CreatePassRefund: Error in binding. Error: code=415, message=Unsupported Media Type","time":"13-09-2022 10:32:49"}
+{"level":"error","msg":"func_CreatePassRefund: Error in binding. Error: code=415, message=Unsupported Media Type","time":"13-09-2022 11:33:59"}
+{"level":"error","msg":"func_CreatePassRefund: Error in binding. Error: code=415, message=Unsupported Media Type","time":"13-09-2022 11:49:09"}
+{"level":"error","msg":"func_CreatePassRefund: Error in binding. Error: code=415, message=Unsupported Media Type","time":"13-09-2022 11:52:10"}
+{"level":"error","msg":"func_CreatePassRefund: Error in binding. Error: code=415, message=Unsupported Media Type","time":"13-09-2022 11:52:24"}
+{"level":"error","msg":"func_CreatePassRefund: Error in binding. Error: code=415, message=Unsupported Media Type","time":"13-09-2022 11:52:41"}
+{"level":"error","msg":"func_CreatePassRefund: Error in binding. Error: code=415, message=Unsupported Media Type","time":"13-09-2022 11:53:13"}
+{"level":"error","msg":"func_CreatePassRefund: Error in binding. Error: code=415, message=Unsupported Media Type","time":"13-09-2022 11:53:18"}
+{"level":"error","msg":"func_CreatePassRefund: Error in binding. Error: code=415, message=Unsupported Media Type","time":"13-09-2022 11:54:09"}
+{"level":"error","msg":"func_CreatePassRefund: Error in binding. Error: code=415, message=Unsupported Media Type","time":"13-09-2022 11:54:43"}
+{"level":"error","msg":"func_CreatePassRefund: Error in binding. Error: code=415, message=Unsupported Media Type","time":"13-09-2022 12:08:41"}
+{"level":"error","msg":"func_CreatePassRefund: Error in binding. Error: code=415, message=Unsupported Media Type","time":"13-09-2022 12:10:16"}
+{"level":"error","msg":"func_CreatePassRefund: Error in binding. Error: code=415, message=Unsupported Media Type","time":"13-09-2022 12:13:57"}
