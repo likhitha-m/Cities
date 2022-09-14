@@ -2,11 +2,14 @@ package controllers
 
 import (
 	"cities/config"
+	// "strconv"
+	// "strconv"
 	// "cities/models"
 	"cities/services"
 	"cities/types"
 	"cities/utils"
 	"net/http"
+
 	// "strconv"
 
 	"github.com/labstack/echo/v4"
@@ -66,4 +69,41 @@ func CreateUser(c echo.Context) error {
 
 
 	return utils.HttpSuccessResponse(c, http.StatusOK, config.MsgUserAdded)
+}
+
+func VerifyEmail(c echo.Context) error {
+	// validating hash key
+	hashKey := c.Param("hashKey")
+	if len(hashKey) == 0 {
+		return utils.HttpErrorResponse(c, http.StatusBadRequest, config.ErrVerKeyNotFound)
+	}
+
+	
+	 err := services.VerifyEmail(hashKey)
+	if err != nil {
+		logger.Error("VerifyEmail: Error in services VerifyEmail. Error: ", err)
+		return utils.HttpErrorResponse(c,  http.StatusBadRequest,  err)
+	}
+	return utils.HttpSuccessResponse(c, http.StatusOK, config.MsgEmailVerified)
+}
+func Login(c echo.Context) error {
+	body := &types.LoginBody{}
+	if err := c.Bind(body); err != nil {
+		logger.Error("Login: Error in binding. Error: ", err)
+		return utils.HttpErrorResponse(c, http.StatusBadRequest, config.ErrWrongPayload)
+	}
+	// Validate request body
+	if err := utils.ValidateStruct(body); err != nil {
+		logger.Error("Login: Error in validating request. Error: ", err)
+		return utils.HttpErrorResponse(c, http.StatusBadRequest, err)
+	}
+
+
+	result,  err := services.Login(*body)
+	if err != nil {
+		logger.Error("Login: Error in login. Error: ", err)
+		return utils.HttpErrorResponse(c, utils.GetStatusCode(err), err)
+	}
+
+	return utils.HttpSuccessResponse(c, http.StatusOK, result)
 }

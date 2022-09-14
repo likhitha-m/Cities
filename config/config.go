@@ -4,6 +4,6 @@ const (
 	Dev                                           string  = "dev"
 	Qa                                            string  = "qa"
 	Prod                                          string  = "prod"
-
+	VerifySignupEmailTemplateName                   string  = "VerifySignupEmailTemplate"
 	
 )

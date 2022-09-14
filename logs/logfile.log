@@ -42,3 +42,18 @@
 {"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"13-09-2022 17:18:12"}
 {"level":"error","msg":"func_CreateCustomer: Error :Invalid mobile number","time":"13-09-2022 17:23:42"}
 {"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"13-09-2022 17:23:54"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"14-09-2022 15:31:32"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"14-09-2022 15:32:44"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"14-09-2022 15:36:53"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"14-09-2022 15:44:59"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"14-09-2022 15:46:01"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"14-09-2022 15:52:46"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"14-09-2022 16:59:54"}
+{"level":"error","msg":"func_VerifyEmail: Error in Decrypt. Error: cipher: message authentication failed","time":"14-09-2022 17:01:05"}
+{"level":"error","msg":"VerifyEmail: Error in services VerifyEmail. Error: cipher: message authentication failed","time":"14-09-2022 17:01:05"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"14-09-2022 17:03:36"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"14-09-2022 17:05:35"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"14-09-2022 17:06:11"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"14-09-2022 17:06:34"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"14-09-2022 17:07:53"}
+{"level":"error","msg":"VerifyEmail: Error in services VerifyEmail. Error: Email already verified","time":"14-09-2022 17:12:11"}

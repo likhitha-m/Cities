@@ -3,12 +3,13 @@ package config
 import "errors"
 
 const (
-	MsgCityAdded   = "City has been added"
-	MsgCityDeleted = "City has been successfully deleted"
-	MsgCityUpdated = "City has been updated"
-	MsgFavAdded    = "City has been added to favourites"
-	MsgFavRemoved  = "City has been removed from favourites"
-	MsgUserAdded   = "User has been added"
+	MsgCityAdded     = "City has been added"
+	MsgCityDeleted   = "City has been successfully deleted"
+	MsgCityUpdated   = "City has been updated"
+	MsgFavAdded      = "City has been added to favourites"
+	MsgFavRemoved    = "City has been removed from favourites"
+	MsgUserAdded     = "User has been added"
+	MsgEmailVerified = "Email has been verified"
 )
 
 var (
@@ -27,4 +28,8 @@ var (
 	ErrInvalidMobNum               = errors.New("Invalid mobile number")
 	ErrInvalidPasswordFormat       = errors.New("Invalid password format")
 	ErrDuplicateCustomer           = errors.New("User already exists with this email address")
+	ErrVerKeyNotFound              = errors.New("verify key not found")
+	ErrEmailAlreadyVerified        = errors.New("Email already verified")
+	ErrUserDoesNotExist            = errors.New("User does not exist with this email address")
+	ErrEmailNotVerified 		   = errors.New(" Email not verified")
 )

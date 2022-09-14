@@ -9,8 +9,10 @@ func UsersGroup(e *echo.Group) {
 
 	e.POST("/signup", controllers.CreateUser)
 	//verifyemail
-	//verifyotp
+	e.GET("/sign_up/verify/:hashKey", controllers.VerifyEmail)
+
 	//login
+	e.POST("/login",controllers.Login)
 	
 
 }

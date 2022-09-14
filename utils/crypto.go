@@ -78,19 +78,22 @@ var iv = []byte{35, 46, 57, 24, 85, 35, 24, 74, 87, 35, 88, 98, 66, 32, 14, 05}
 
 func SimpleEncrypt(text string) (string, error) {
 
-	block, err := aes.NewCipher([]byte(os.Getenv("ENC_KEY")))
+	fmt.Println("text--->>",text)
+	block, err := aes.NewCipher([]byte(os.Getenv("EMAIL_ENC_KEY")))
 	if err != nil {
 		return "", err
 	}
 	plaintext := []byte(text)
+	fmt.Println(plaintext)
 	cfb := cipher.NewCFBEncrypter(block, iv)
 	ciphertext := make([]byte, len(plaintext))
 	cfb.XORKeyStream(ciphertext, plaintext)
+	fmt.Println("encrypted--->>>")
 	return encodeBase64(ciphertext), nil
 }
 
 func SimpleDecrypt(text string) (string, error) {
-	block, err := aes.NewCipher([]byte(os.Getenv("ENC_KEY")))
+	block, err := aes.NewCipher([]byte(os.Getenv("EMAIL_ENC_KEY")))
 	if err != nil {
 		return "", err
 	}
