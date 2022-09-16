@@ -23,7 +23,7 @@ type FavouritesReceiver struct {
 	CityPayload types.CityPayload
 }
 
-func (cr *FavouritesReceiver) AddFavouriteCity(cityID string) error {
+func (cr *FavouritesReceiver) AddFavouriteCity(cityID string, userId string) error {
 	// var city models.CityModel
 	mdb := storage.MONGO_DB
 	cId, err := primitive.ObjectIDFromHex(cityID)
@@ -31,10 +31,19 @@ func (cr *FavouritesReceiver) AddFavouriteCity(cityID string) error {
 		logger.Error("func_GetGrantByOrder", err)
 
 	}
-	filter := bson.M{
-		"_id": cId,
+	user, err:= primitive.ObjectIDFromHex(userId)
+	if err != nil {
+		logger.Error("func_GetGrantByOrder", err)
+
 	}
-	favourite := mdb.Collection(models.CitiesCollection).FindOne(context.TODO(), filter)
+	favourite:=models.FavouriteCityModel{
+		CityId: cId,
+		UserId: user,
+	}
+	// filter := bson.M{
+	// 	"_id": cId,
+	// }
+	// favourite := mdb.Collection(models.CitiesCollection).FindOne(context.TODO(), filter)
 	_, err = mdb.Collection(models.FavouritesCollection).InsertOne(context.TODO(), favourite)
 	// err = result.Decode(&city)
 	// if err != nil {

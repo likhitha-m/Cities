@@ -3,7 +3,7 @@ module cities
 go 1.16
 
 require (
-	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	// github.com/Shopify/sarama v1.30.1
 	// github.com/aws/aws-sdk-go v1.34.28
 	github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8
@@ -22,5 +22,5 @@ require (
 	go.mongodb.org/mongo-driver v1.7.0
 	golang.org/x/sys v0.0.0-20210630005230-0f9fa26af87c // indirect
 	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
-	gopkg.in/mail.v2 v2.3.1 // indirect
+	gopkg.in/mail.v2 v2.3.1
 )

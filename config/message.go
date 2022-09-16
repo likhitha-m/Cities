@@ -32,4 +32,5 @@ var (
 	ErrEmailAlreadyVerified        = errors.New("Email already verified")
 	ErrUserDoesNotExist            = errors.New("User does not exist with this email address")
 	ErrEmailNotVerified 		   = errors.New(" Email not verified")
+	ErrInvalidToken 		   = errors.New("Invalid token")
 )

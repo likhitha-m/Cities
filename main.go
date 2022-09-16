@@ -13,9 +13,23 @@ import (
 	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	// echoSwagger "github.com/swaggo/echo-swagger"
+	echoSwagger "github.com/swaggo/echo-swagger"
 )
+// @title weather api documentation
+// @version 1.0
+// @description This is a api documentation for weather app
 
+
+
+
+
+
+// @host localhost:3010
+// @BasePath /api/v1
+
+// @securityDefinitions.apikey Authorization
+// @in header
+// @name Authorization
 func main() {
 
 	fmt.Println("inside main function")
@@ -50,7 +64,7 @@ func main() {
 
 	// Route
 	e.GET("/", controllers.HealthCheck)
-	// e.GET("/swagger/*", echoSwagger.WrapHandler)
+	e.GET("/swagger/*", echoSwagger.WrapHandler)
 
 	v1 := e.Group("/api/v1")
 	route.InitializeRoutes(v1)

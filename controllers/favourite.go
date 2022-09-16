@@ -2,10 +2,12 @@ package controllers
 
 import (
 	// "fmt"
+	"fmt"
 	"net/http"
 
 	"cities/config"
 	"cities/services"
+
 	// "cities/types"
 	"cities/utils"
 
@@ -17,13 +19,15 @@ import (
 
 func AddFavouriteCity(c echo.Context) error {
 	cId := c.Param("cityId")
+	userId := c.Request().Header.Get("userId")
+	fmt.Println("usrId", userId)
 	cr := services.FavouritesReceiver{}
-	err := cr.AddFavouriteCity(cId)
+	err := cr.AddFavouriteCity(cId,userId)
 	if err != nil {
 		logger.Error("func_AddCreditsForGuestRecovery:  ", err.Error())
 		return utils.HttpErrorResponse(c, http.StatusBadRequest, config.ErrRecordNotFound)
 	}
-	return utils.HttpSuccessResponse(c, http.StatusOK, nil)
+	return utils.HttpSuccessResponse(c, http.StatusOK, map[string]string{"message": config.MsgFavAdded})
 }
 
 func RemoveFavouriteCity(c echo.Context) error {
