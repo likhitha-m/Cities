@@ -24,7 +24,7 @@ import (
 
 
 
-// @host localhost:3010
+// @host localhost:3100
 // @BasePath /api/v1
 
 // @securityDefinitions.apikey Authorization

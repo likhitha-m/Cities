@@ -1,0 +1,14 @@
+basePath: /api/v1
+host: localhost:3100
+info:
+  contact: {}
+  description: This is a api documentation for weather app
+  title: weather api documentation
+  version: "1.0"
+paths: {}
+securityDefinitions:
+  Authorization:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

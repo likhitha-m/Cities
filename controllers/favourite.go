@@ -33,12 +33,33 @@ func AddFavouriteCity(c echo.Context) error {
 func RemoveFavouriteCity(c echo.Context) error {
 	cId := c.Param("cityId")
 	cr := services.FavouritesReceiver{}
-
-	err := cr.RemoveFavouriteCity(cId)
+	userId := c.Request().Header.Get("userId")
+	err := cr.RemoveFavouriteCity(cId,userId)
 	if err != nil {
 		logger.Error("func_DeleteCityById:  ", err.Error())
 		return utils.HttpErrorResponse(c, http.StatusBadRequest, err)
 	}
 
 	return utils.HttpSuccessResponse(c, http.StatusOK, map[string]string{"message": config.MsgFavRemoved})
+}
+
+func ListFavourites(c echo.Context) error {
+
+    cr := services.FavouritesReceiver{}
+	userId := c.Request().Header.Get("userId")
+
+    cities, err := cr.ListFavourites(userId)
+
+    if err != nil {
+
+        logger.Error("func_GetFavouriteCities:  ", err.Error())
+
+        return utils.HttpErrorResponse(c, http.StatusBadRequest, err)
+
+    }
+
+
+
+    return utils.HttpSuccessResponse(c, http.StatusOK, cities)
+
 }

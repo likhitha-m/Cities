@@ -14,20 +14,18 @@ import (
 	// "go.mongodb.org/mongo-driver/bson/primitive"
 	// "golang.org/x/text/message"
 )
-// Create City godoc
+// City godoc
 // @Summary Add city
 // @Description add a city
 // @Tags City
 // @Accept  json
 // @Produce json
-// @Param customer body types.CityPayload true "Add city"
+// @Param city body types.CityPayload true "Add city"
 // @Success 200 {object} utils.SuccessContent{data=types.MsgOut}
 // @Failure 400 {object} utils.ErrorContent
 // @Failure 404 {object} utils.ErrorContent
 // @Failure 500 {object} utils.ErrorContent
-// @Router /cards [post]
-// @Security CustomerBasicAuth
-
+// @Router /cities [post]
 
 func CreateCity(c echo.Context) error {
 	input := &types.CityPayload{}
@@ -53,6 +51,19 @@ func CreateCity(c echo.Context) error {
 
 	return utils.HttpSuccessResponse(c, http.StatusOK, map[string]string{"message": config.MsgCityAdded})
 }
+
+// City godoc
+// @Summary list cities
+// @Description list cities
+// @Tags City
+// @Accept  json
+// @Produce json
+
+// @Success 200 {object} utils.SuccessContent{data=types.MsgOut}
+// @Failure 400 {object} utils.ErrorContent
+// @Failure 404 {object} utils.ErrorContent
+// @Failure 500 {object} utils.ErrorContent
+// @Router /cities [get]
 
 func GetCities(c echo.Context) error {
 	cr := services.CitiesReceiver{}

@@ -1,0 +1,19 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a api documentation for weather app",
+        "title": "weather api documentation",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "localhost:3100",
+    "basePath": "/api/v1",
+    "paths": {},
+    "securityDefinitions": {
+        "Authorization": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    }
+}

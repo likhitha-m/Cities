@@ -14,6 +14,7 @@ type UserModel struct {
 	Email        string             `bson:"email,omitempty" json:"email,omitempty"`
 	Password     string             `bson:"password,omitempty" json:"password,omitempty"`
 	MobileNumber string             `bson:"mobile,omitempty" json:"mobile,omitempty"`
+	// ProfileImage string 
 	CreatedAt    time.Time          `bson:"created_at" json:"created_at,omitempty"`
 	UpdatedAt    time.Time          `bson:"updated_at" json:"updated_at,omitempty"`
 	IsVerified   bool               `bson:"is_verified" json:"is_verified"`
